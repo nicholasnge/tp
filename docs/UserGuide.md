@@ -5,10 +5,22 @@ title: User Guide
 
 <img width="960" alt="docboblogo" src="https://user-images.githubusercontent.com/59093518/113546749-2db63300-961f-11eb-979d-128c9fd10ee6.png">
 
-**DocBob** is a lightweight patient management system built to help small clinics better manage the appointments & medical information of their beloved patients. With DocBob, you will never have to go through the hassle of manually keeping track of your patients' medical information and appointments ever again. Leave the pen and paper in the past and let DocBob take you to an automated future. In the event of any issues, please feel free to contact the team via the email provided below under the **Issues** section
+**DocBob** is a lightweight patient management system built to help small clinics better manage the appointments & medical information of their beloved patients. With DocBob, you will never have to go through the hassle of manually keeping track of your patients' medical information and appointments ever again. Leave the pen and paper in the past and let DocBob take you to an automated future. 
+If there are any issues, please feel free to contact the team via the emails provided below under the **Issues** section
 
 * Table of Contents
 {:toc}
+
+--------------------------------------------------------------------------------------------------------------------
+# Application Layout
+
+![img_1.png](img_1.png)
+
+DocBob's interface comprises of 4 main parts.
+* The **command box** is where you would enter the commands to be executed.
+* The **command response** is where you would be able to see DocBob's response to the command you have just entered.
+* The **patient book** is where your current displayed patient list would be shown.
+* The **selected patient** is where the patient you are currently viewing would be displayed with all their contact information, medical information, appointments and medical records.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -21,8 +33,8 @@ title: User Guide
 1. Double-click the file to start the app. You should see a Graphical User Interface similar to the image below on startup.![images/Startup.png](images/Startup.png)
    > **First Startup**: If the full Graphical User Interface does not appear on your screen, please resize your window. DocBob comes with some sample patient data when started for the first time. Try out the example commands below with the sample data and when you are ready, use the `clear` command to remove all sample patient data and start adding your own patients!
 
-1. Execute commands by typing them in the command box and pressing **Enter**. See [Features](#features) for comprehensive details of each and every command.<br>
-   Examples of commands:
+1. Execute commands by typing them in the command box and pressing **Enter**. See [Features](#features) for more comprehensive details of each and every command.<br>
+   Example commands you can try:
    * **`list`** : Lists out all patients in DocBob's main patient list.
 
    * **`add n/Breanna Frye y/13121999 g/F p/97890525 e/example@gmail.com a/4340 Monroe Street b/AB+ h/163cm w/54kg`** : Adds a patient named `Breanna Frye` with the given information to the patient book.
@@ -32,18 +44,6 @@ title: User Guide
 > **Quick tip**: Typing **`help`** and pressing Enter will list out all available commands!
 
 --------------------------------------------------------------------------------------------------------------------
-# Overview
-
-![img_1.png](img_1.png)
-
-DocBob's interface comprises of 4 main parts.
-* The **command box** is where you would enter the commands to be executed.
-* The **command response** is where you would be able to see DocBob's response to the command you have just entered.
-* The **patient book** is where your current displayed patient list would be shown.
-* The **selected patient** is where the patient you are currently viewing would be displayed with all their contact information, medical information, appointments and medical records.
-
---------------------------------------------------------------------------------------------------------------------
-
 
 # Features
 
@@ -81,6 +81,8 @@ large number of patients in their database, as the archive allows clinics to bet
 
 
 </div>
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Basic Features
 Basic features contain the commands for interacting with the list of patients. Add a new patient with `add`, or edit an existing one with `edit`. View the full list of existing patients 
@@ -196,13 +198,15 @@ Output:
 
 `Deleted Person: Shrek; Date Of Birth: 27-02-1999; Gender: M; Phone: 69696969; Email: shrek@swampmail.com; Address: Swamp; BloodType: O-; Height: 243cm; Weight: 94kg; Tags: [acromegaly]`
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Appointments & Medical Records
 Clinics deal with an unending stream of new appointments, and the collection of medical records is constantly growing. DocBob supports adding multiple appointments/medical records to each
 patients, as well as convenient ways to view the upcoming appointments and records. Add an appointment with the `appt` command, or view all upcoming appointments sorted by date with `listappt`. Open a new medical record of the selected patient with `mrec`, or view 
 an existing record with `vrec`.
 
-In addition to commands by the user, DocBob also does some bookkeeping on its own! Appointments that are more than a day past are automatically deleted, and empty sections (without a title 
-and body) of a the medical record are automatically removed. 
+In addition to commands by the user, DocBob also does some bookkeeping of its own! Appointments that are more than a day past are automatically deleted, and empty sections (without a title 
+and body) of a medical record are automatically removed. 
 
 > **Limitations**: DocBob currently does not support editing/removal of existing appointments. Clinics may choose to edit the data file directly to edit/remove appointments, or wait for the 
 > appointment date to pass and the appointment to be automatically cleaned up.
@@ -290,6 +294,8 @@ Output:
 
 > **Quick tip**: Make sure you have selected the patient whose medical record you want to view first, using `view`. If the selected patient has no medical records to view, you can create a new one using `mrec`
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Archive
 As clinics grow, the patient book may grow to a size that is too large for clinics to continue using DocBob efficiently. To accommodate an ever growing number of patients, we introduce a suite of
 archive commands for better organisation and management of the patient book. Specifically, it allows clinics to 'archive' inactive patients without deleting their medical data and records, which
@@ -315,7 +321,6 @@ Example:
 Output:
 
 ![image](https://user-images.githubusercontent.com/48408342/114153711-30cc5e80-9952-11eb-8dbf-b2eeb74d36b2.png)
-
 
 ### Listing out all archived patients : `archivelist`
 
@@ -391,7 +396,7 @@ If your changes to the data file makes its format invalid, docBob will discard a
 **A**: Install the app in the other computer and replace the empty data file it creates with the file that contains the data of your previous DocBob home folder.<br>
 **Q**: How do I edit a patient's details or add appointments to a patient that is archived?<br>
 **A**: Unarchive the patient using the `unarchive` command and proceed with editing the patient's details or scheduling appointments with the patient.<br>
-**Q**: How do I get back the sample patient data that appeared when I first opened the app after clearing it?<br>
+**Q**: How do I restore the sample patient data that comes with when I first opened the app after I cleared it?<br>
 **A**: Delete the data folder along with the docBob.json file inside and restart the app. Note that you will lose any patient info that you added after clearing the app of all sample patient data.<br>
 **Q**: Why is some information not visible?<br>
 **A**: The screen size differs depending on your device, try resizing your window if some information is not visible.
@@ -404,7 +409,7 @@ Terminology | Definition
 ------------|------------
 **Parameter** |  In the command format given, the words in `UPPER_CASE` are the parameters or arguments to be supplied by you. For example, in the add command, the given format is: `add n/NAME p/PHONENUMBER e/EMAIL a/ADDRESS h/HEIGHT w/WEIGHT [t/TAG]`. Thus, `NAME`, `PHONENUMBER`, `EMAIL`, `ADDRESS`, `HEIGHT`, `WEIGHT` and `TAG` are the parameters to be keyed in by you. `TAG` is an optional parameter.
 **Index** | Index refers to the position of the patient in the displayed patient list. For example, if the order in which patients are displayed in the app is {Alice,Bob,Charlie} then Alice's index is 1, Bob's is 2, and Charlie's is 3.
-**Medical record** | The report that the doctor writes during an appointment with a patient.
+**Medical record** | The report that the doctor writes during an appointment with a patient. Can be created using the `mrec` command. A medical record is made up of multiple sections.
 **Section** | A way for doctors to organise their medical record into parts so that it looks neat.
 **Acromegaly** | A disorder that results from excess growth hormone.
 
@@ -432,7 +437,7 @@ Action | Format, Examples
 **help** | `help`
 
 # Issues
-In the event of any issues while using the app and or UG, please contact the team either of the emails below <br>
+If there are any issues with DocBob or this UG, please contact the team via any of the emails below <br>
 e0406660@u.nus.edu.com<br>
 e0407819@u.nus.edu.com<br>
 e0407867@u.nus.edu.com<br>

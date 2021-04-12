@@ -43,5 +43,5 @@ SaveMedicalRecordCommand -> Model
 activate Model
 SaveMedicalRecordCommand <-- Model--
 EditorWindow <-- SaveMedicalRecordCommand--
-MainWindow <-- EditorWindow--
+destroy EditorWindow
 @enduml
